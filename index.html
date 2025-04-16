@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Noite de Sábado 💖</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #ffccd5, #ffe6eb);
+            color: #660000;
+            text-align: center;
+            padding: 30px;
+        }
+        h1 {
+            color: #b30000;
+            font-size: 2.5em;
+        }
+        p {
+            font-size: 1.3em;
+        }
+        .options {
+            margin-top: 30px;
+        }
+        .option {
+            background-color: #ffcccc;
+            border: 2px solid #ff4d4d;
+            border-radius: 20px;
+            padding: 15px;
+            margin: 15px auto;
+            width: 80%;
+            max-width: 500px;
+            font-size: 1.2em;
+        }
+        .photos {
+            margin: 30px 0;
+        }
+        .photos img {
+            width: 45%;
+            border-radius: 20px;
+            margin: 10px;
+        }
+        audio {
+            margin: 20px 0;
+        }
+        form {
+            margin-top: 30px;
+        }
+        select, button {
+            font-size: 1em;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Oi, meu amorzinho 💘</h1>
+    <p>Escute essa música enquanto escolhe a nossa noite de sábado:</p>
+    <audio controls>
+        <source src="tem_que_ser_voce.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+    </audio>
+
+    <div class="photos">
+        <img src="foto1.jpg" alt="Foto do casal 1">
+        <img src="foto2.jpg" alt="Foto do casal 2">
+    </div>
+
+    <p>Quero te convidar pra uma noite especial... você escolhe o que mais combina com a gente hoje:</p>
+
+    <div class="options">
+        <div class="option">🌽 Visitar a Fenamilho, jantar na Don Augusto e voltar pra casa pra namorar muuuito.</div>
+        <div class="option">🌹 Ir ao Florence Santa Rosa e depois jantar no Gioia Pizzaria.</div>
+        <div class="option">🏡 Ficar em casa, pedir pizza do Pier, assistir um filme e namorar bastante.</div>
+    </div>
+
+    <form action="#" method="POST">
+        <label for="escolha">Sua escolha:</label><br>
+        <select id="escolha" name="escolha">
+            <option value="fenamilho">Fenamilho + Don Augusto + Casa</option>
+            <option value="florence">Florence + Gioia Pizzaria</option>
+            <option value="casa">Casa + Pier + Filminho</option>
+        </select><br>
+        <button type="submit">Confirmar 💌</button>
+    </form>
+
+    <p style="margin-top: 40px;">Te amo infinito. Sua Kelly. 💕</p>
+</body>
+</html>
