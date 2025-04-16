@@ -3,89 +3,95 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Noite de Sábado 💖</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite da Kelly</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(to bottom, #ffccd5, #ffe6eb);
-            color: #660000;
-            text-align: center;
-            padding: 30px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom right, #ffc0cb, #ffe4e1);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+            color: #8b0000;
         }
         h1 {
-            color: #b30000;
-            font-size: 2.5em;
-        }
-        p {
-            font-size: 1.3em;
-        }
-        .options {
-            margin-top: 30px;
-        }
-        .option {
-            background-color: #ffcccc;
-            border: 2px solid #ff4d4d;
-            border-radius: 20px;
-            padding: 15px;
-            margin: 15px auto;
-            width: 80%;
-            max-width: 500px;
-            font-size: 1.2em;
-        }
-        .photos {
-            margin: 30px 0;
-        }
-        .photos img {
-            width: 45%;
-            border-radius: 20px;
-            margin: 10px;
+            margin-top: 40px;
+            font-size: 2.5rem;
         }
         audio {
             margin: 20px 0;
         }
-        form {
-            margin-top: 30px;
+        .opcoes {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 20px 0;
+            width: 90%;
+            max-width: 500px;
         }
-        select, button {
-            font-size: 1em;
-            padding: 10px;
-            border-radius: 10px;
-            border: none;
-            margin: 10px;
+        .opcao {
+            background-color: #fff0f5;
+            border: 2px solid #ff69b4;
+            padding: 15px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .opcao:hover {
+            transform: scale(1.03);
+            background-color: #ffe4ec;
+        }
+        .opcao.selecionada {
+            border: 2px solid #ff1493;
+            background-color: #ffe4ec;
+        }
+        .resposta {
+            margin-top: 30px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+        img {
+            max-width: 200px;
+            margin: 15px;
+            border-radius: 16px;
         }
     </style>
 </head>
 <body>
     <h1>Oi, meu amorzinho 💘</h1>
     <p>Escute essa música enquanto escolhe a nossa noite de sábado:</p>
-    <audio controls>
-        <source src="tem_que_ser_voce.mp3" type="audio/mpeg">
-        Seu navegador não suporta áudio.
+    <audio controls autoplay loop>
+        <source src="temqueservoce.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
     </audio>
-
-    <div class="photos">
-        <img src="foto1.jpg" alt="Foto do casal 1">
-        <img src="foto2.jpg" alt="Foto do casal 2">
+    <div class="opcoes">
+        <div class="opcao" onclick="selecionar(this, 'Fenamilho + Don Augusto + casa')">
+            <img src="fenamilho.jpg" alt="Fenamilho">
+            <p>Visitar a Fenamilho, jantar no Don Augusto e voltar pra casa pra namorar muito.</p>
+        </div>
+        <div class="opcao" onclick="selecionar(this, 'Florence + Gioia')">
+            <img src="florence.jpg" alt="Florence Santa Rosa">
+            <p>Ir ao Florence Santa Rosa e depois jantar no Gioia Pizzaria.</p>
+        </div>
+        <div class="opcao" onclick="selecionar(this, 'Pizza do Pier + filminho + muito beijo')">
+            <img src="filme.jpg" alt="Filme em casa">
+            <p>Ficar em casa, pedir pizza do Pier, assistir um filme e namorar bastante.</p>
+        </div>
     </div>
+    <div class="resposta" id="resposta"></div>
 
-    <p>Quero te convidar pra uma noite especial... você escolhe o que mais combina com a gente hoje:</p>
-
-    <div class="options">
-        <div class="option">🌽 Visitar a Fenamilho, jantar na Don Augusto e voltar pra casa pra namorar muuuito.</div>
-        <div class="option">🌹 Ir ao Florence Santa Rosa e depois jantar no Gioia Pizzaria.</div>
-        <div class="option">🏡 Ficar em casa, pedir pizza do Pier, assistir um filme e namorar bastante.</div>
-    </div>
-
-    <form action="#" method="POST">
-        <label for="escolha">Sua escolha:</label><br>
-        <select id="escolha" name="escolha">
-            <option value="fenamilho">Fenamilho + Don Augusto + Casa</option>
-            <option value="florence">Florence + Gioia Pizzaria</option>
-            <option value="casa">Casa + Pier + Filminho</option>
-        </select><br>
-        <button type="submit">Confirmar 💌</button>
-    </form>
-
-    <p style="margin-top: 40px;">Te amo infinito. Sua Kelly. 💕</p>
+    <script>
+        function selecionar(elemento, escolha) {
+            const opcoes = document.querySelectorAll('.opcao');
+            opcoes.forEach(op => op.classList.remove('selecionada'));
+            elemento.classList.add('selecionada');
+            document.getElementById('resposta').textContent = `Sua escolha: ${escolha} 💕`;
+        }
+    </script>
 </body>
 </html>
